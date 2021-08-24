@@ -22,6 +22,15 @@ server.get('/home',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/home.html' ))
 })
 
+server.get('/login',(req,res) => {
+    let id=req.query.id
+    if(id==1){
+        res.status(200).send('Bienvenido')
+    }else{
+        res.status(401).sendFile(path.join(__dirname,'./view/404.html' ))
+    }
+
+})
 
 
 
